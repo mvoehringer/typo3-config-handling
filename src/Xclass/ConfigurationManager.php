@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 namespace Helhum\TYPO3\ConfigHandling\Xclass;
 
 /***************************************************************
@@ -220,6 +222,28 @@ class ConfigurationManager
         }
 
         return $this->mainConfig;
+    }
+
+    /**
+     * Get the file location of the TYPO3-project specific settings file,
+     * currently the path and filename.
+     *
+     * Path to local overload TYPO3_CONF_VARS file.
+     *
+     * @internal
+     */
+    public function getSystemConfigurationFileLocation(bool $relativeToProjectRoot = false): string
+    {
+        // For composer-based installations, the file is in config/system/settings.php
+        if (Environment::getProjectPath() !== Environment::getPublicPath()) {
+            $path = Environment::getConfigPath() . '/system/settings.php';
+        } else {
+            $path = Environment::getLegacyConfigPath() . '/system/settings.php';
+        }
+        if ($relativeToProjectRoot) {
+            return substr($path, strlen(Environment::getProjectPath()) + 1);
+        }
+        return $path;
     }
 
     /**

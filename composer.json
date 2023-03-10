@@ -1,6 +1,6 @@
 {
     "name": "helhum/typo3-config-handling",
-    "description" : "Simple but powerful configuration handling for TYPO3 CMS",
+    "description": "Simple but powerful configuration handling for TYPO3 CMS",
     "license": "GPL-2.0-or-later",
     "config": {
         "allow-plugins": {
@@ -12,11 +12,11 @@
         "php": ">=7.4",
         "ext-json": "*",
         "helhum/config-loader": ">=0.12.4 <0.13",
-        "helhum/typo3-console": "^7.0",
-        "symfony/console": "^5.4",
-        "symfony/yaml": "^5.4",
-        "typo3/cms-composer-installers": "^3.0 || ^4.0",
-        "typo3/cms-core": "^11.5.20",
+        "helhum/typo3-console": "dev-main",
+        "symfony/console": "^6.2",
+        "symfony/yaml": "^6.2",
+        "typo3/cms-composer-installers": "^3.0 || ^4.0 || ^5.0",
+        "typo3/cms-core": "^11.5.20 || ^12.2.0",
         "composer-runtime-api": "^2.2",
         "symfony/polyfill-php80": "^1.23.1"
     },
